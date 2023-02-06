@@ -8,10 +8,10 @@ const countAnimals = (animal) => {
     });
     return animals;
   }
-  const info = data.species.find((specie) => specie.name === animal.species);
-  const sexo = info.residents.filter((sex) => sex.sex === animal.sex);
+  const nameSpecie = data.species.find((specie) => specie.name === animal.species);
+  const sexo = nameSpecie.residents.filter((sex) => sex.sex === animal.sex);
   if (!animal.sex) {
-    return info.residents.length;
+    return nameSpecie.residents.length;
   }
   return sexo.length;
 };
